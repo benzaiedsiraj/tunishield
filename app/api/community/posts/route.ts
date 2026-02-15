@@ -4,6 +4,8 @@ import { z } from "zod";
 import { cookies } from "next/headers";
 import { verifyToken } from "@/lib/auth";
 
+export const dynamic = "force-dynamic";
+
 // Validation schema for creating a post
 const createPostSchema = z.object({
     title: z.string().min(3, "Title too short").max(100, "Title too long"),

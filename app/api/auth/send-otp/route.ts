@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { z } from "zod";
 
+export const dynamic = "force-dynamic";
+
 // Gmail SMTP transporter
 const transporter = process.env.SMTP_EMAIL && process.env.SMTP_PASSWORD
     ? nodemailer.createTransport({

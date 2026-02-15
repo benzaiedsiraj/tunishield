@@ -4,6 +4,8 @@ import { z } from "zod";
 import { cookies } from "next/headers";
 import { verifyToken } from "@/lib/auth";
 
+export const dynamic = "force-dynamic";
+
 const createCommentSchema = z.object({
     content: z.string().min(1, "Comment cannot be empty").max(500, "Comment too long"),
 });
