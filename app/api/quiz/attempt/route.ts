@@ -6,7 +6,7 @@ import { verifyToken } from "@/lib/auth";
 export async function GET(req: Request) {
     try {
         const cookieStore = cookies();
-        const token = cookieStore.get("token");
+        const token = cookieStore.get("session");
 
         if (!token) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -59,7 +59,7 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
     try {
         const cookieStore = cookies();
-        const token = cookieStore.get("token");
+        const token = cookieStore.get("session");
 
         if (!token) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

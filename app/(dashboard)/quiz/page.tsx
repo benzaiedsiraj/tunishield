@@ -98,7 +98,7 @@ export default function QuizPage() {
             fetch("/api/quiz/attempt", {
                 method: "POST",
                 body: JSON.stringify({ score: score })
-            });
+            }).catch(err => console.error("Failed to submit score:", err));
         }
     };
 
