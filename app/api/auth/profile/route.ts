@@ -3,6 +3,8 @@ import { getSession } from "@/lib/auth";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
+export const dynamic = "force-dynamic";
+
 const updateProfileSchema = z.object({
     name: z.string().min(1).max(50).optional(),
     avatarUrl: z.string().url().optional().or(z.literal("")),
